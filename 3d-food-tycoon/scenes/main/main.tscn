@@ -1,27 +1,16 @@
 [gd_scene format=3 uid="uid://cmvrgsta2lsxw"]
 
 [ext_resource type="PackedScene" uid="uid://ccaj46gli6fs5" path="res://scenes/player/player.tscn" id="1_hyk8p"]
+[ext_resource type="Script" uid="uid://fx4amuv06qgg" path="res://scenes/main/main.gd" id="1_k2fmo"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qgins"]
+[node name="Main" type="Node3D" unique_id=372321649 node_paths=PackedStringArray("level_container")]
+script = ExtResource("1_k2fmo")
+level_container = NodePath("LevelContainer")
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qgins"]
-
-[node name="Main" type="Node3D" unique_id=372321649]
-
-[node name="Plane" type="StaticBody3D" parent="." unique_id=182961714]
-
-[node name="Mesh" type="MeshInstance3D" parent="Plane" unique_id=1264458848]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
-mesh = SubResource("PlaneMesh_qgins")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane" unique_id=907310594]
-shape = SubResource("WorldBoundaryShape3D_qgins")
+[node name="LevelContainer" type="Node" parent="." unique_id=303861880]
 
 [node name="Player" parent="." unique_id=1045326340 instance=ExtResource("1_hyk8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3396206, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1330465765]
 transform = Transform3D(1, 0, 0, 0, 0.304352, 0.95255965, 0, -0.95255965, 0.304352, 0, 5.102423, 1.4579053)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=724409988]
-transform = Transform3D(1, 0, 0, 0, 0.51896566, 0.8547951, 0, -0.8547951, 0.51896566, 0, 23.651575, 8.2497425)
