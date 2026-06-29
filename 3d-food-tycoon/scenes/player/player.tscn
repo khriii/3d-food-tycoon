@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccaj46gli6fs5"]
 
 [ext_resource type="Script" uid="uid://megc0spkorwi" path="res://components/movement_component.gd" id="1_8afob"]
+[ext_resource type="Script" uid="uid://t67tn2usl4lf" path="res://components/input_component.gd" id="2_dovo2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qgins"]
 
@@ -14,7 +15,12 @@ mesh = SubResource("CapsuleMesh_qgins")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=546670423]
 shape = SubResource("CylinderShape3D_qgins")
 
-[node name="MovementComponent" type="Node3D" parent="." unique_id=641073668 node_paths=PackedStringArray("entity")]
+[node name="MovementComponent" type="Node3D" parent="." unique_id=641073668 node_paths=PackedStringArray("entity", "input_component")]
 script = ExtResource("1_8afob")
 entity = NodePath("..")
+input_component = NodePath("../InputComponent")
 metadata/_custom_type_script = "uid://megc0spkorwi"
+
+[node name="InputComponent" type="Node" parent="." unique_id=279182610]
+script = ExtResource("2_dovo2")
+metadata/_custom_type_script = "uid://t67tn2usl4lf"
