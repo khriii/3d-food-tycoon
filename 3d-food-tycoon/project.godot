@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="3d-food-tycoon"
+run/main_scene="uid://cmvrgsta2lsxw"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]
