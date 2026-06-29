@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://bcbat6rrwa4j6"]
 
+[ext_resource type="Texture2D" uid="uid://btmj8donbesb7" path="res://assets/textures/floor/floor_00.png" id="1_yrjyl"]
+[ext_resource type="PackedScene" uid="uid://3pcfs4um6bry" path="res://scenes/objects/test/test_cube.tscn" id="2_drdss"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmlin"]
+albedo_texture = ExtResource("1_yrjyl")
+uv1_scale = Vector3(10, 10, 10)
+texture_filter = 0
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_7jeqx"]
+material = SubResource("StandardMaterial3D_gmlin")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yrjyl"]
 
@@ -17,3 +26,5 @@ shape = SubResource("WorldBoundaryShape3D_yrjyl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1655173720]
 transform = Transform3D(1, 0, 0, 0, 0.51896566, 0.8547951, 0, -0.8547951, 0.51896566, 0, 23.651575, 8.2497425)
+
+[node name="TestCube" parent="." unique_id=1559702355 instance=ExtResource("2_drdss")]

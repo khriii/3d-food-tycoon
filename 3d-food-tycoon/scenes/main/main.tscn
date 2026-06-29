@@ -13,4 +13,5 @@ level_container = NodePath("LevelContainer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3396206, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1330465765]
-transform = Transform3D(1, 0, 0, 0, 0.304352, 0.95255965, 0, -0.95255965, 0.304352, 0, 5.102423, 1.4579053)
+transform = Transform3D(1, 0, 0, 0, 0.304352, 0.95255965, 0, -0.95255965, 0.304352, 0, 5.1024265, 1.4579086)
+size = 8.0

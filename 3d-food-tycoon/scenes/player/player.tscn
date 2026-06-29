@@ -23,4 +23,5 @@ metadata/_custom_type_script = "uid://megc0spkorwi"
 
 [node name="InputComponent" type="Node" parent="." unique_id=279182610]
 script = ExtResource("2_dovo2")
+custom_actions = Array[String](["interact"])
 metadata/_custom_type_script = "uid://t67tn2usl4lf"

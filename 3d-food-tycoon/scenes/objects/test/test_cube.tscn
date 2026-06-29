@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3pcfs4um6bry"]
+
+[ext_resource type="Script" uid="uid://c84gvkee33dgq" path="res://scenes/objects/test/test_cube.gd" id="1_fubv4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qgins"]
+
+[node name="TestCube" type="StaticBody3D" unique_id=1559702355]
+script = ExtResource("1_fubv4")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=945399974]
+mesh = SubResource("BoxMesh_qgins")

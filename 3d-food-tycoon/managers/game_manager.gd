@@ -13,7 +13,6 @@ func register_main_scene(p_container: Node, p_player: Node3D):
 
 func load_level(level_path: String):
 	print("sigma")
-	
 	if level_container == null:
 		printerr("Errore: LevelContainer non è stato registrato nel GameManager!")
 		return
