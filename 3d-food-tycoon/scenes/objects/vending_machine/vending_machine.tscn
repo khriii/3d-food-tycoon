@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cbcveu8igtaxm"]
+
+[ext_resource type="PackedScene" uid="uid://bdawg0vlsmpwk" path="res://assets/models/vending_machine.glb" id="1_a2vq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgins"]
+size = Vector3(1, 2, 1)
+
+[node name="VendingMachine" type="StaticBody3D" unique_id=1818691325]
+
+[node name="vending_machine" parent="." unique_id=1930283752 instance=ExtResource("1_a2vq1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=755790275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_qgins")
+
+[node name="CameraTarget" type="Marker3D" parent="." unique_id=873075453]
+transform = Transform3D(1, 0, 0, 0, 1, -0.00044457614, 0, 0.00044457614, 1, 0, 2.1829944, 4.7804785)

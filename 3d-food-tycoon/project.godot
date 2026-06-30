@@ -23,6 +23,10 @@ GameManager="*uid://j351oc3dudpi"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 move_up={

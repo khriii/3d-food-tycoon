@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bcbat6rrwa4j6"]
 
+[ext_resource type="Script" uid="uid://c63t5x0i2w8bv" path="res://scenes/restaurants/pizzeria/pizzeria.gd" id="1_kek23"]
 [ext_resource type="Texture2D" uid="uid://btmj8donbesb7" path="res://assets/textures/floor/floor_00.png" id="1_yrjyl"]
 [ext_resource type="PackedScene" uid="uid://3pcfs4um6bry" path="res://scenes/objects/test/test_cube.tscn" id="2_drdss"]
+[ext_resource type="PackedScene" uid="uid://cbcveu8igtaxm" path="res://scenes/objects/vending_machine/vending_machine.tscn" id="3_hu5ha"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmlin"]
 albedo_texture = ExtResource("1_yrjyl")
@@ -13,7 +15,9 @@ material = SubResource("StandardMaterial3D_gmlin")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yrjyl"]
 
-[node name="Pizzeria" type="Node3D" unique_id=569201585]
+[node name="Pizzeria" type="Node3D" unique_id=569201585 node_paths=PackedStringArray("vending_machine")]
+script = ExtResource("1_kek23")
+vending_machine = NodePath("VendingMachine")
 
 [node name="Plane" type="StaticBody3D" parent="." unique_id=710864948]
 
@@ -28,3 +32,6 @@ shape = SubResource("WorldBoundaryShape3D_yrjyl")
 transform = Transform3D(1, 0, 0, 0, 0.51896566, 0.8547951, 0, -0.8547951, 0.51896566, 0, 23.651575, 8.2497425)
 
 [node name="TestCube" parent="." unique_id=1559702355 instance=ExtResource("2_drdss")]
+
+[node name="VendingMachine" parent="." unique_id=1818691325 instance=ExtResource("3_hu5ha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -4.5)
