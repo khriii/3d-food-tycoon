@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btmj8donbesb7" path="res://assets/textures/floor/floor_00.png" id="1_yrjyl"]
 [ext_resource type="PackedScene" uid="uid://3pcfs4um6bry" path="res://scenes/objects/test/test_cube.tscn" id="2_drdss"]
 [ext_resource type="PackedScene" uid="uid://cbcveu8igtaxm" path="res://scenes/objects/vending_machine/vending_machine.tscn" id="3_hu5ha"]
+[ext_resource type="PackedScene" uid="uid://jdqfb7gwrtq2" path="res://scenes/npc/npc.tscn" id="5_yjuqp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmlin"]
 albedo_texture = ExtResource("1_yrjyl")
@@ -35,3 +36,6 @@ transform = Transform3D(1, 0, 0, 0, 0.51896566, 0.8547951, 0, -0.8547951, 0.5189
 
 [node name="VendingMachine" parent="." unique_id=1818691325 instance=ExtResource("3_hu5ha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -4.5)
+
+[node name="Npc" parent="." unique_id=208316250 instance=ExtResource("5_yjuqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4835978, 0.89626455, 3.2021177)

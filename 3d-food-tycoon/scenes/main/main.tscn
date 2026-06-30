@@ -15,4 +15,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3396206, 0)
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1330465765]
 transform = Transform3D(1, 0, 0, 0, 0.51861143, 0.8550101, 0, -0.8550101, 0.51861143, 0, 4.9434776, 3.565308)
 fov = 60.0
-size = 10.804
+size = 8.0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ccaj46gli6fs5"]
 
 [ext_resource type="Script" uid="uid://megc0spkorwi" path="res://components/movement_component.gd" id="1_8afob"]
+[ext_resource type="Script" uid="uid://bb88kp63ujs6e" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="Script" uid="uid://t67tn2usl4lf" path="res://components/input_component.gd" id="2_dovo2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qgins"]
@@ -10,7 +11,10 @@ height = 2.0756836
 height = 1.076
 radius = 0.319
 
-[node name="Player" type="CharacterBody3D" unique_id=1045326340]
+[node name="Player" type="CharacterBody3D" unique_id=1045326340 node_paths=PackedStringArray("input_component", "movement_component")]
+script = ExtResource("1_gmlin")
+input_component = NodePath("InputComponent")
+movement_component = NodePath("MovementComponent")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=201924410]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.022705078, 0)
@@ -20,10 +24,9 @@ mesh = SubResource("CapsuleMesh_qgins")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.055, 0)
 shape = SubResource("CylinderShape3D_qgins")
 
-[node name="MovementComponent" type="Node3D" parent="." unique_id=641073668 node_paths=PackedStringArray("entity", "input_component")]
+[node name="MovementComponent" type="Node3D" parent="." unique_id=641073668 node_paths=PackedStringArray("entity")]
 script = ExtResource("1_8afob")
 entity = NodePath("..")
-input_component = NodePath("../InputComponent")
 metadata/_custom_type_script = "uid://megc0spkorwi"
 
 [node name="InputComponent" type="Node" parent="." unique_id=279182610]

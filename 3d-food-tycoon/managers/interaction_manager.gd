@@ -23,7 +23,8 @@ func _process(delta: float) -> void:
 		label.text=base_interaction_alert_label_text+interaction_areas[0].action_name
 		label.show()
 	else:
-		label.hide()
+		if label:
+			label.hide()
 
 # Sorts the interaction area array based on the position of the player (closest to player first)
 func _sort_by_distance_to_player(area1:InteractionAreaComponent,area2:InteractionAreaComponent):
