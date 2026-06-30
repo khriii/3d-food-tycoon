@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bwf6a4nc6jkh4"]
+
+[ext_resource type="Script" uid="uid://wn35dvj11d8p" path="res://scenes/food/pizza/pizza.gd" id="1_6qrre"]
+[ext_resource type="PackedScene" uid="uid://q43l6uoeqtvx" path="res://assets/models/pizza_base.glb" id="1_fy40i"]
+[ext_resource type="PackedScene" uid="uid://bdt8d52mtcekg" path="res://assets/models/pizza_wurstel.glb" id="2_6qrre"]
+
+[node name="Pizza" type="Node3D" unique_id=222913838]
+script = ExtResource("1_6qrre")
+
+[node name="pizza_base" parent="." unique_id=588730184 instance=ExtResource("1_fy40i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012108535, 0)
+
+[node name="pizza_wurstel" parent="." unique_id=673509156 instance=ExtResource("2_6qrre")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013540052, 0)
+visible = false
