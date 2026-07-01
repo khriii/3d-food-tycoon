@@ -11,7 +11,8 @@ height = 2.0756836
 height = 1.076
 radius = 0.319
 
-[node name="Player" type="CharacterBody3D" unique_id=1045326340 node_paths=PackedStringArray("input_component", "movement_component")]
+[node name="Player" type="CharacterBody3D" unique_id=1045326340 node_paths=PackedStringArray("input_component", "movement_component") groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_gmlin")
 input_component = NodePath("InputComponent")
 movement_component = NodePath("MovementComponent")

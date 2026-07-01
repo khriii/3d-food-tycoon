@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://jdqfb7gwrtq2" path="res://scenes/npc/npc.tscn" id="5_yjuqp"]
 [ext_resource type="PackedScene" uid="uid://cdcjwnotp4qaj" path="res://scenes/objects/box/box.tscn" id="6_o58hl"]
 [ext_resource type="PackedScene" uid="uid://baue66gocwr7e" path="res://scenes/objects/computer/computer.tscn" id="7_jhwxf"]
+[ext_resource type="PackedScene" uid="uid://dsytg7xcxmnhx" path="res://components/interaction_area_component/interaction_area_component.tscn" id="7_n306g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gmlin"]
 albedo_texture = ExtResource("1_yrjyl")
@@ -17,6 +18,9 @@ texture_filter = 0
 material = SubResource("StandardMaterial3D_gmlin")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yrjyl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uicyb"]
+radius = 6.453
 
 [node name="Pizzeria" type="Node3D" unique_id=569201585 node_paths=PackedStringArray("vending_machine")]
 script = ExtResource("1_kek23")
@@ -45,5 +49,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4835978, 0.89626455, 3.202
 [node name="Box" parent="." unique_id=1967681849 instance=ExtResource("6_o58hl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9268696, 1.7318482, 0)
 
+[node name="Area3D" parent="Box" unique_id=838067984 instance=ExtResource("7_n306g")]
+collision_mask = 1
+action_name = "pick up box"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box/Area3D" unique_id=512547400]
+shape = SubResource("SphereShape3D_uicyb")
+
 [node name="Computer" parent="." unique_id=2074521215 instance=ExtResource("7_jhwxf")]
 transform = Transform3D(2.311224, 0, 0, 0, 2.311224, 0, 0, 0, 1, -0.59252477, 0.38304114, -3.5736995)
+
+[node name="Label" type="Label" parent="." unique_id=1464066282 groups=["message_label"]]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -23.0
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Nigga"
