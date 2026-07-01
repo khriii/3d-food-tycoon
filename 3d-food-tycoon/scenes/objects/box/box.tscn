@@ -12,3 +12,5 @@ size = Vector3(0.6, 0.6, 0.6)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=864722254]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29996723, 0)
 shape = SubResource("BoxShape3D_qgins")
+
+[editable path="box"]
