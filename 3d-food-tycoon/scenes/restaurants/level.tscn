@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dmn0h1mg13bf0"]
+
+[ext_resource type="Script" uid="uid://e36pn2fs6oil" path="res://scenes/restaurants/level.gd" id="1_5r48j"]
+[ext_resource type="Script" uid="uid://d1ik38d37mhg8" path="res://managers/customer_npcs_manager.gd" id="1_ayp2m"]
+
+[node name="Level" type="Node3D" unique_id=728370441]
+script = ExtResource("1_5r48j")
+
+[node name="CustomerNpcManager" type="Node" parent="." unique_id=701034928]
+script = ExtResource("1_ayp2m")
+metadata/_custom_type_script = "uid://d1ik38d37mhg8"
+
+[node name="SpotsContainer" type="Node3D" parent="." unique_id=769161411]
+
+[node name="WaitingSpotsContainer" type="Node3D" parent="SpotsContainer" unique_id=125029682]
+
+[node name="OrderingSpotsContainer" type="Node3D" parent="SpotsContainer" unique_id=1784263858]
+
+[node name="EatingSpotsContainer" type="Node3D" parent="SpotsContainer" unique_id=1930099959]
+
+[node name="ExitSpot" type="Marker3D" parent="SpotsContainer" unique_id=901144697]

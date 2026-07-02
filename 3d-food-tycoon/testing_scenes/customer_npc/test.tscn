@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b1yma61qg21v4"]
+
+[ext_resource type="PackedScene" uid="uid://dmn0h1mg13bf0" path="res://scenes/restaurants/level.tscn" id="1_1d5ek"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1d5ek"]
+vertices = PackedVector3Array(-7, 0.5, -7, -7, 0.5, 7, 7, 0.5, 7, 7, 0.5, -7)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fbat6"]
+size = Vector2(10, 10)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_egsno"]
+
+[node name="Level" unique_id=728370441 instance=ExtResource("1_1d5ek")]
+
+[node name="Marker3D" type="Marker3D" parent="SpotsContainer/WaitingSpotsContainer" parent_id_path=PackedInt32Array(125029682) index="0" unique_id=1245637407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4525347, 0, -5.468465)
+
+[node name="Marker3D2" type="Marker3D" parent="SpotsContainer/WaitingSpotsContainer" parent_id_path=PackedInt32Array(125029682) index="1" unique_id=1084092884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5469337, 0, -2.1166172)
+
+[node name="Marker3D3" type="Marker3D" parent="SpotsContainer/WaitingSpotsContainer" parent_id_path=PackedInt32Array(125029682) index="2" unique_id=15556251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7895298, 0, -5.9649615)
+
+[node name="Marker3D4" type="Marker3D" parent="SpotsContainer/WaitingSpotsContainer" parent_id_path=PackedInt32Array(125029682) index="3" unique_id=481348943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.5643396)
+
+[node name="Marker3D5" type="Marker3D" parent="SpotsContainer/WaitingSpotsContainer" parent_id_path=PackedInt32Array(125029682) index="4" unique_id=796556959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7386036, 0, -3.8416557)
+
+[node name="Marker3D6" type="Marker3D" parent="SpotsContainer/WaitingSpotsContainer" parent_id_path=PackedInt32Array(125029682) index="5" unique_id=287080037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.052496, 0, -3.4490762)
+
+[node name="Marker3D" type="Marker3D" parent="SpotsContainer/OrderingSpotsContainer" parent_id_path=PackedInt32Array(1784263858) index="0" unique_id=1070322249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7953188, 0, 3.055407)
+
+[node name="Marker3D2" type="Marker3D" parent="SpotsContainer/OrderingSpotsContainer" parent_id_path=PackedInt32Array(1784263858) index="1" unique_id=1827887347]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.9812222)
+
+[node name="Marker3D3" type="Marker3D" parent="SpotsContainer/OrderingSpotsContainer" parent_id_path=PackedInt32Array(1784263858) index="2" unique_id=1863262955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7429469, 0, 2.9997396)
+
+[node name="Marker3D" type="Marker3D" parent="SpotsContainer/EatingSpotsContainer" parent_id_path=PackedInt32Array(1930099959) index="0" unique_id=265774826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.644998, 0, 5.0198593)
+
+[node name="Marker3D2" type="Marker3D" parent="SpotsContainer/EatingSpotsContainer" parent_id_path=PackedInt32Array(1930099959) index="1" unique_id=1318406595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="ExitSpot" parent="SpotsContainer" parent_id_path=PackedInt32Array(769161411) index="3" unique_id=901144697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015838146, 0, -7)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="2" unique_id=1743465407]
+transform = Transform3D(1, 0, 0, 0, 0.5804753, 0.8142779, 0, -0.8142779, 0.5804753, 0, 7.0222187, 4.049054)
+
+[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=802042951]
+transform = Transform3D(0.99933225, -0.019431902, 0.030943906, 0, 0.84686524, 0.53180754, -0.036539353, -0.5314524, 0.8462997, 0.24403939, 5.142244, 8.163534)
+fov = 60.0
+size = 8.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." index="4" unique_id=730729151]
+navigation_mesh = SubResource("NavigationMesh_1d5ek")
+
+[node name="Floor" type="StaticBody3D" parent="NavigationRegion3D" index="0" unique_id=380571534]
+collision_layer = 2
+collision_mask = 11
+
+[node name="Plane" type="MeshInstance3D" parent="NavigationRegion3D/Floor" index="0" unique_id=1341411406]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fbat6")
+
+[node name="Collision" type="CollisionShape3D" parent="NavigationRegion3D/Floor" index="1" unique_id=1024005589]
+shape = SubResource("WorldBoundaryShape3D_egsno")

@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://7n2ij0vfhm0v"]
 
+[ext_resource type="Script" uid="uid://dp5y0p2hgpbs0" path="res://testing_scenes/customer_npc/test_npc_level.gd" id="1_5mw1u"]
 [ext_resource type="PackedScene" uid="uid://jdqfb7gwrtq2" path="res://scenes/npc/customer_npc/customer_npc.tscn" id="1_irdmj"]
-[ext_resource type="PackedScene" uid="uid://cdcjwnotp4qaj" path="res://scenes/objects/box/box.tscn" id="2_5mw1u"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_m6y2d"]
-vertices = PackedVector3Array(1.5, 0.49999997, -6.5, 2.5, 0.49999997, -6.75, 2.5, 0.49999997, -7, -3, 0.49999997, -6.75, -1.5, 0.49999997, -6.5, -2, 0.49999997, -4.5, -0.5, 0.49999997, -4, -0.25, 0.49999997, -4.5, -4, 0.49999997, -5, -3.25, 0.49999997, -5.25, 1.25, 0.49999997, -4.25, 1.75, 0.49999997, -5, -7, 0.49999997, -7, -7, 0.49999997, -4, -4, 0.49999997, -4, 3.25, 0.49999997, -6.5, 3.75, 0.49999997, -7, -3.75, 0.49999997, -3.5, 4.25, 0.49999997, -6.5, 3.25, 0.49999997, -5.25, 4.25, 0.49999997, -4.75, -0.25, 0.49999997, -2.75, -2.25, 0.49999997, -3.5, 1, 0.49999997, -2.75, 7, 0.49999997, 7, 5.75, 0.49999997, -4.75, 7, 0.49999997, -6.25, 6, 0.49999997, -6.25, -7, 0.49999997, 7, 7, 0.49999997, -7)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(8, 3, 9), PackedInt32Array(11, 10, 7), PackedInt32Array(5, 4, 7), PackedInt32Array(7, 4, 11), PackedInt32Array(11, 4, 0), PackedInt32Array(12, 2, 3), PackedInt32Array(3, 8, 12), PackedInt32Array(12, 8, 13), PackedInt32Array(8, 14, 13), PackedInt32Array(1, 2, 15), PackedInt32Array(15, 2, 16), PackedInt32Array(13, 14, 17), PackedInt32Array(16, 18, 15), PackedInt32Array(15, 18, 19), PackedInt32Array(19, 18, 20), PackedInt32Array(17, 22, 21), PackedInt32Array(10, 20, 23), PackedInt32Array(23, 20, 25), PackedInt32Array(23, 25, 24), PackedInt32Array(5, 6, 22), PackedInt32Array(22, 6, 21), PackedInt32Array(27, 26, 25), PackedInt32Array(25, 26, 24), PackedInt32Array(23, 24, 21), PackedInt32Array(21, 24, 28), PackedInt32Array(11, 19, 10), PackedInt32Array(10, 19, 20), PackedInt32Array(17, 21, 13), PackedInt32Array(13, 21, 28), PackedInt32Array(26, 27, 29), PackedInt32Array(29, 27, 18), PackedInt32Array(29, 18, 16)]
+vertices = PackedVector3Array(-7, 0.5, -7, -7, 0.5, 7, 7, 0.5, 7, 7, 0.5, -7)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qgins"]
 size = Vector2(10, 10)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qgins"]
 
-[node name="FoodBuilder" type="Node3D" unique_id=406745285]
+[node name="FoodBuilder" type="Node3D" unique_id=406745285 node_paths=PackedStringArray("waiting_spots_container", "ordering_spots_container")]
+script = ExtResource("1_5mw1u")
+waiting_spots_container = NodePath("SpotsContainer/WaitingSpotsMarkerContainer")
+ordering_spots_container = NodePath("SpotsContainer/OrderingSpotsMarkerContainer2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1942566362]
 transform = Transform3D(1, 0, 0, 0, 0.5804753, 0.8142779, 0, -0.8142779, 0.5804753, 0, 7.0222187, 4.049054)
@@ -28,42 +31,19 @@ size = 8.0
 
 [node name="Npc" parent="." unique_id=1900462889 node_paths=PackedStringArray("waiting_spots") instance=ExtResource("1_irdmj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.114012, 1.0856358, -9.398881)
-waiting_spots = [NodePath("../WaitingSpotsMarkerContainer/Marker3D"), NodePath("../WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../WaitingSpotsMarkerContainer/Marker3D7")]
+waiting_spots = [NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D7")]
 
 [node name="Npc2" parent="." unique_id=351749490 node_paths=PackedStringArray("waiting_spots") instance=ExtResource("1_irdmj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.5507686, 1.0856358, -9.398881)
-waiting_spots = [NodePath("../WaitingSpotsMarkerContainer/Marker3D"), NodePath("../WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../WaitingSpotsMarkerContainer/Marker3D7")]
+waiting_spots = [NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D7")]
 
 [node name="Npc3" parent="." unique_id=880238548 node_paths=PackedStringArray("waiting_spots") instance=ExtResource("1_irdmj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.5411606, 1.0856358, -9.398881)
-waiting_spots = [NodePath("../WaitingSpotsMarkerContainer/Marker3D"), NodePath("../WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../WaitingSpotsMarkerContainer/Marker3D7")]
+waiting_spots = [NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D7")]
 
 [node name="Npc4" parent="." unique_id=1555109917 node_paths=PackedStringArray("waiting_spots") instance=ExtResource("1_irdmj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1.0856358, -14.822335)
-waiting_spots = [NodePath("../WaitingSpotsMarkerContainer/Marker3D"), NodePath("../WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../WaitingSpotsMarkerContainer/Marker3D7")]
-
-[node name="WaitingSpotsMarkerContainer" type="Node3D" parent="." unique_id=173062047]
-
-[node name="Marker3D" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=1612428944]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.270066)
-
-[node name="Marker3D2" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=957606953]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4.270066)
-
-[node name="Marker3D3" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=1085845607]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4.270066)
-
-[node name="Marker3D4" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=1176129584]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9568143, 0, -1.4182115)
-
-[node name="Marker3D5" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=2021658894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1.0186472)
-
-[node name="Marker3D6" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=1486300231]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5555687, 0, 0.06747389)
-
-[node name="Marker3D7" type="Marker3D" parent="WaitingSpotsMarkerContainer" unique_id=1255939573]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10443449, 0, 0.44725275)
+waiting_spots = [NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D2"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D3"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D4"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D5"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D6"), NodePath("../SpotsContainer/WaitingSpotsMarkerContainer/Marker3D7")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1138637819]
 navigation_mesh = SubResource("NavigationMesh_m6y2d")
@@ -79,17 +59,38 @@ mesh = SubResource("PlaneMesh_qgins")
 [node name="Collision" type="CollisionShape3D" parent="NavigationRegion3D/Floor" unique_id=1679234364]
 shape = SubResource("WorldBoundaryShape3D_qgins")
 
-[node name="Box" parent="NavigationRegion3D" unique_id=1967681849 instance=ExtResource("2_5mw1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3267531, 0, -5.8937087)
+[node name="SpotsContainer" type="Node3D" parent="." unique_id=332325110]
 
-[node name="Box2" parent="NavigationRegion3D" unique_id=1382072053 instance=ExtResource("2_5mw1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0384407, 0, -5.687218)
+[node name="WaitingSpotsMarkerContainer" type="Node3D" parent="SpotsContainer" unique_id=173062047]
 
-[node name="Box3" parent="NavigationRegion3D" unique_id=1398090519 instance=ExtResource("2_5mw1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42750788, 0, -3.6285844)
+[node name="Marker3D" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=1612428944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.270066)
 
-[node name="Box4" parent="NavigationRegion3D" unique_id=1439553364 instance=ExtResource("2_5mw1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.379533, 0, -5.8937087)
+[node name="Marker3D2" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=957606953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4.270066)
 
-[node name="Box5" parent="NavigationRegion3D" unique_id=1925077115 instance=ExtResource("2_5mw1u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.957384, 0, -4.4123507)
+[node name="Marker3D3" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=1085845607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4.270066)
+
+[node name="Marker3D4" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=1176129584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9568143, 0, -1.4182115)
+
+[node name="Marker3D5" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=2021658894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1.0186472)
+
+[node name="Marker3D6" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=1486300231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5555687, 0, 0.06747389)
+
+[node name="Marker3D7" type="Marker3D" parent="SpotsContainer/WaitingSpotsMarkerContainer" unique_id=1255939573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10443449, 0, 0.44725275)
+
+[node name="OrderingSpotsMarkerContainer2" type="Node3D" parent="SpotsContainer" unique_id=1578684351]
+
+[node name="Marker3D" type="Marker3D" parent="SpotsContainer/OrderingSpotsMarkerContainer2" unique_id=539510620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4261966)
+
+[node name="Marker3D2" type="Marker3D" parent="SpotsContainer/OrderingSpotsMarkerContainer2" unique_id=1055237498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2.7299342)
+
+[node name="Marker3D3" type="Marker3D" parent="SpotsContainer/OrderingSpotsMarkerContainer2" unique_id=254092694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2.7299342)
