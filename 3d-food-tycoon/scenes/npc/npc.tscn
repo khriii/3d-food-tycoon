@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://jdqfb7gwrtq2"]
+[gd_scene format=3 uid="uid://dq2irrnxah3ve"]
 
 [ext_resource type="Script" uid="uid://c6s774euqrifp" path="res://scenes/npc/npc.gd" id="1_pcwmf"]
 [ext_resource type="Script" uid="uid://megc0spkorwi" path="res://components/movement_component.gd" id="1_sspvn"]

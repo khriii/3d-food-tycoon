@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://jdqfb7gwrtq2"]
+
+[ext_resource type="Script" uid="uid://c6s774euqrifp" path="res://scenes/npc/customer_npc/customer_npc.gd" id="1_pcwmf"]
+[ext_resource type="Script" uid="uid://megc0spkorwi" path="res://components/movement_component.gd" id="1_sspvn"]
+[ext_resource type="PackedScene" uid="uid://b4mistovdnx5o" path="res://assets/models/character.glb" id="3_dpyoa"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ubc2r"]
+radius = 0.11328125
+height = 1.918457
+
+[node name="CustomerNpc" type="CharacterBody3D" unique_id=1900462889 node_paths=PackedStringArray("movement_component")]
+collision_layer = 8
+collision_mask = 11
+wall_min_slide_angle = 0.0
+script = ExtResource("1_pcwmf")
+movement_component = NodePath("MovementComponent")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=103385468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18774414, 0)
+shape = SubResource("CapsuleShape3D_ubc2r")
+
+[node name="MovementComponent" type="Node3D" parent="." unique_id=1621691537 node_paths=PackedStringArray("entity")]
+script = ExtResource("1_sspvn")
+entity = NodePath("..")
+speed = 3.0
+metadata/_custom_type_script = "uid://megc0spkorwi"
+
+[node name="character" parent="." unique_id=1605664677 instance=ExtResource("3_dpyoa")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1591043797]
+target_desired_distance = 3.0
+path_height_offset = 0.5
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=2022397868]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
