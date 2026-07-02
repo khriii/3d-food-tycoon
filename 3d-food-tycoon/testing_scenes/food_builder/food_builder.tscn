@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cgr8ffmuqurbd"]
+
+[ext_resource type="PackedScene" uid="uid://ccaj46gli6fs5" path="res://scenes/player/player.tscn" id="1_5jjfc"]
+[ext_resource type="PackedScene" uid="uid://5xawra4fh15y" path="res://scenes/objects/ingredients/dough.tscn" id="2_qi1fq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qgins"]
+size = Vector2(10, 10)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qgins"]
+
+[node name="FoodBuilder" type="Node3D" unique_id=406745285]
+
+[node name="Player" parent="." unique_id=1045326340 instance=ExtResource("1_5jjfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7910929, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=2104471900]
+transform = Transform3D(1, 0, 0, 0, 0.51861143, 0.8550101, 0, -0.8550101, 0.51861143, 0, 4.1523848, 1.8954797)
+fov = 60.0
+size = 8.0
+
+[node name="Dough" parent="." unique_id=902738652 instance=ExtResource("2_qi1fq")]
+transform = Transform3D(0.99997336, -0.0065816143, 0.0031539716, 0.0066038496, 0.99995303, -0.0070961975, -0.0031071452, 0.0071168253, 0.99996984, 0, 0.46061718, -3.1454)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=70806792]
+collision_layer = 2
+collision_mask = 11
+
+[node name="Plane" type="MeshInstance3D" parent="Floor" unique_id=1656843801]
+mesh = SubResource("PlaneMesh_qgins")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=1679234364]
+shape = SubResource("WorldBoundaryShape3D_qgins")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1942566362]
+transform = Transform3D(1, 0, 0, 0, 0.5804753, 0.8142779, 0, -0.8142779, 0.5804753, 0, 7.0222187, 4.049054)
+
+[node name="Label" type="Label" parent="." unique_id=897596294 groups=["message_label"]]
+offset_right = 40.0
+offset_bottom = 23.0

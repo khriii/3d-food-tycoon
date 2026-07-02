@@ -4,24 +4,25 @@
 [ext_resource type="PackedScene" uid="uid://b5wch71nwu8q" path="res://assets/models/pc.glb" id="1_t24b3"]
 [ext_resource type="Script" uid="uid://dyd0aqanun6d4" path="res://scenes/objects/computer/screen.gd" id="3_61lh3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xv6jj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_61lh3"]
 viewport_path = NodePath("../SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwg2g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vidpx"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_xv6jj")
+albedo_texture = SubResource("ViewportTexture_61lh3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qgins"]
 size = Vector3(1.9853516, 0.01, 1.9638672)
 
 [node name="Computer" type="StaticBody3D" unique_id=2074521215]
+collision_layer = 2
 script = ExtResource("1_7yrxt")
 
 [node name="pc" parent="." unique_id=2035743670 instance=ExtResource("1_t24b3")]
 
-[node name="Plane" parent="pc" index="5" unique_id=67496200]
+[node name="Plane" parent="pc" index="5" unique_id=948669145]
 transform = Transform3D(0.2911309, 0, 0, 0, 0.022560606, -0.18406248, 0, 0.18252434, 0.022750724, 0, 0.2805077, -0.010754794)
-material_override = SubResource("StandardMaterial3D_iwg2g")
+material_override = SubResource("StandardMaterial3D_vidpx")
 
 [node name="InteractionArea" type="Area3D" parent="pc/Plane" index="0" unique_id=2147112003]
 
