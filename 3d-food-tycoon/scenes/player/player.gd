@@ -9,6 +9,9 @@ func _ready() -> void:
 		printerr("player.gd: movement_component missing")
 	if not input_component:
 		printerr("player.gd: input_component missing")
+	
+	# Reference the player for the interactions
+	InteractionManager.player = self
 
 func _physics_process(delta: float) -> void:
 	var input_dir = input_component.input_dir
