@@ -1,5 +1,6 @@
 class_name Ingredient
-extends RigidBody3D
+extends Resource
 
-@export var ingredient_id: String
-@export var ingredient_name: String
+@export var id: String
+@export var _name: String
+@export_file("*.tscn") var visual_scene_path: String

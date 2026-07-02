@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://megc0spkorwi" path="res://components/movement_component.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://bb88kp63ujs6e" path="res://scenes/player/player.gd" id="1_gmlin"]
 [ext_resource type="Script" uid="uid://t67tn2usl4lf" path="res://components/input_component.gd" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://cdu0mu0a140k1" path="res://components/inventory_component.gd" id="4_lvxji"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qgins"]
 height = 2.0756836
@@ -34,3 +35,11 @@ metadata/_custom_type_script = "uid://megc0spkorwi"
 script = ExtResource("2_dovo2")
 custom_actions = Array[String](["interact"])
 metadata/_custom_type_script = "uid://t67tn2usl4lf"
+
+[node name="InventoryComponent" type="Node" parent="." unique_id=131970847 node_paths=PackedStringArray("hand")]
+script = ExtResource("4_lvxji")
+hand = NodePath("../Hand")
+metadata/_custom_type_script = "uid://cdu0mu0a140k1"
+
+[node name="Hand" type="Marker3D" parent="." unique_id=599556261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30473542, 0.13047564, -0.24122521)

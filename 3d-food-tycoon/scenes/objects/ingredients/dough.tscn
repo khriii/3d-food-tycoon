@@ -1,35 +1,36 @@
 [gd_scene format=3 uid="uid://5xawra4fh15y"]
 
-[ext_resource type="Script" uid="uid://38r0d0mlepd8" path="res://scripts/ingredient.gd" id="1_kiysw"]
+[ext_resource type="Script" uid="uid://cyvi5dh1f7r4n" path="res://scenes/objects/ingredients/dough.gd" id="1_0h862"]
 [ext_resource type="PackedScene" uid="uid://dsytg7xcxmnhx" path="res://components/interaction_area_component/interaction_area_component.tscn" id="2_0h862"]
+[ext_resource type="Resource" uid="uid://dgqmyekf6oyso" path="res://scenes/objects/ingredients/resources/dough_data.tres" id="2_34r1b"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_qgins"]
+[sub_resource type="SphereMesh" id="SphereMesh_kiysw"]
 radius = 0.2
 height = 0.3
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qgins"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0h862"]
 size = Vector3(0.35, 0.25, 0.35)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t22n7"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_34r1b"]
 size = Vector3(3, 0.4580078, 3)
 
-[node name="Dough" type="RigidBody3D" unique_id=902738652]
+[node name="Dough" type="RigidBody3D" unique_id=1513376555 node_paths=PackedStringArray("pickup_area")]
 collision_layer = 2
 collision_mask = 11
-script = ExtResource("1_kiysw")
-ingredient_id = "dough"
-ingredient_name = "Dough"
-metadata/_custom_type_script = "uid://38r0d0mlepd8"
+script = ExtResource("1_0h862")
+item_data = ExtResource("2_34r1b")
+pickup_area = NodePath("Area")
+metadata/_custom_type_script = "uid://cnw3d6nwkf1rl"
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1415326776]
-mesh = SubResource("SphereMesh_qgins")
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=688978395]
+mesh = SubResource("SphereMesh_kiysw")
 
-[node name="Collision" type="CollisionShape3D" parent="." unique_id=1408372288]
-shape = SubResource("BoxShape3D_qgins")
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=602787694]
+shape = SubResource("BoxShape3D_0h862")
 
 [node name="Area" parent="." unique_id=838067984 node_paths=PackedStringArray("interaction_object") instance=ExtResource("2_0h862")]
 action_name = "take"
 interaction_object = NodePath("..")
 
-[node name="Collision" type="CollisionShape3D" parent="Area" unique_id=383958164]
-shape = SubResource("BoxShape3D_t22n7")
+[node name="Collision" type="CollisionShape3D" parent="Area" unique_id=1179986232]
+shape = SubResource("BoxShape3D_34r1b")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dgqmyekf6oyso"]
+
+[ext_resource type="Script" uid="uid://38r0d0mlepd8" path="res://scripts/ingredient.gd" id="1_dcfny"]
+
+[resource]
+script = ExtResource("1_dcfny")
+id = "dough"
+_name = "Dough"
+visual_scene_path = "uid://5xawra4fh15y"
+metadata/_custom_type_script = "uid://38r0d0mlepd8"
