@@ -40,6 +40,7 @@ func change_state(new_state:Customer_NPC_state)->void:
 			if not is_going_to_order and not is_going_to_eat:
 				walk_to_waiting_spot()
 		Customer_NPC_state.ORDER:
+			print("NIGGA IS GOING TO ORDER NOW")
 			#play order animation, show order request
 			pass
 			

@@ -19,3 +19,5 @@ metadata/_custom_type_script = "uid://d1ik38d37mhg8"
 [node name="EatingSpotsContainer" type="Node3D" parent="SpotsContainer" unique_id=1930099959]
 
 [node name="ExitSpot" type="Marker3D" parent="SpotsContainer" unique_id=901144697]
+
+[node name="Timer" type="Timer" parent="." unique_id=704698367]
