@@ -29,12 +29,17 @@ metadata/_custom_type_script = "uid://megc0spkorwi"
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1591043797]
-target_desired_distance = 3.0
+target_desired_distance = 0.8
 path_height_offset = 0.5
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=2022397868]
 wait_time = 5.0
 one_shot = true
 
+[node name="OrderingTimer" type="Timer" parent="." unique_id=825220033]
+wait_time = 20.0
+one_shot = true
+
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="OrderingTimer" to="." method="_on_ordering_timer_timeout"]
