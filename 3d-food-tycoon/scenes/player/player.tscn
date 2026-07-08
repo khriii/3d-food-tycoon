@@ -13,11 +13,12 @@ height = 2.0756836
 height = 1.076
 radius = 0.319
 
-[node name="Player" type="CharacterBody3D" unique_id=1045326340 node_paths=PackedStringArray("input_component", "movement_component") groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=1045326340 node_paths=PackedStringArray("input_component", "movement_component", "equipment_component") groups=["player"]]
 collision_mask = 14
 script = ExtResource("1_gmlin")
 input_component = NodePath("InputComponent")
 movement_component = NodePath("MovementComponent")
+equipment_component = NodePath("EquipmentComponent")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=201924410]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.022705078, 0)
@@ -42,10 +43,14 @@ script = ExtResource("4_lvxji")
 inventory_size = 3
 metadata/_custom_type_script = "uid://cdu0mu0a140k1"
 
-[node name="EquipmentComponent" type="Node" parent="." unique_id=1368601555 node_paths=PackedStringArray("hand")]
+[node name="EquipmentComponent" type="Node" parent="." unique_id=1368601555 node_paths=PackedStringArray("hand", "drop")]
 script = ExtResource("5_p47bc")
 hand = NodePath("../Hand")
+drop = NodePath("../Drop")
 metadata/_custom_type_script = "uid://bp6kby4mkyaqa"
 
 [node name="Hand" type="Marker3D" parent="." unique_id=599556261]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30473542, 0.13047564, -0.24122521)
+
+[node name="Drop" type="Marker3D" parent="." unique_id=819830301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8060086)

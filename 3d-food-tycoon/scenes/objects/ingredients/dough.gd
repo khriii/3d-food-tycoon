@@ -15,3 +15,4 @@ func pickup() -> void:
 			inventory_component.add_item(self.item_data)
 			if equipment_component:
 				equipment_component.equip_item(self.item_data)
+	queue_free()
