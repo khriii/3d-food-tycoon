@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgr8ffmuqurbd"]
 
 [ext_resource type="PackedScene" uid="uid://ccaj46gli6fs5" path="res://scenes/player/player.tscn" id="1_5jjfc"]
-[ext_resource type="PackedScene" uid="uid://5xawra4fh15y" path="res://scenes/objects/ingredients/dough.tscn" id="2_qi1fq"]
+[ext_resource type="PackedScene" uid="uid://5xawra4fh15y" path="res://scenes/objects/ingredients/dough_pickup.tscn" id="2_qi1fq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qgins"]
 size = Vector2(10, 10)

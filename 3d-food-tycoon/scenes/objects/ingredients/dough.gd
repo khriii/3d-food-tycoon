@@ -1,22 +1,17 @@
 extends PickableItem
 
 var inventory_component: InventoryComponent
+var equipment_component: EquipmentComponent
 
 func _ready() -> void:
 	pickup_area.interaction = Callable(self, "pickup")
 	if InteractionManager.player:
 		inventory_component = InteractionManager.player.find_child("InventoryComponent")
+		equipment_component = InteractionManager.player.find_child("EquipmentComponent")
 
 func pickup() -> void:
 	if inventory_component:
-		var index = inventory_component.add_to_inventory(item_data)
-		
-		if index != -1:
-			inventory_component.set_item_in_hand(index)
-			
-			print("picked up dough")
-			
-			
-			queue_free()
-		else:
-			print("inventory full")
+		if self.item_data:
+			inventory_component.add_item(self.item_data)
+			if equipment_component:
+				equipment_component.equip_item(self.item_data)

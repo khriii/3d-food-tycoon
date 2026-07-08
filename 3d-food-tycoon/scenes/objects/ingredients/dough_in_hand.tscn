@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dluwnyo1i8v03"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a0cfj"]
+radius = 0.2
+height = 0.3
+
+[node name="DoughInventoryItem" type="Node3D" unique_id=1649036274]
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1900643502]
+mesh = SubResource("SphereMesh_a0cfj")

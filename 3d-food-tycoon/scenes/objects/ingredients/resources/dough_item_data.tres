@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://chocalp4ecypb"]
+
+[ext_resource type="Script" uid="uid://losagdaaw6n6" path="res://components/inventory/ItemData.gd" id="1_7xkts"]
+[ext_resource type="PackedScene" uid="uid://dluwnyo1i8v03" path="res://scenes/objects/ingredients/dough_in_hand.tscn" id="1_msneg"]
+
+[resource]
+script = ExtResource("1_7xkts")
+id = "dough"
+name = "Dough"
+world_scene_path = "uid://5xawra4fh15y"
+equip_scene = ExtResource("1_msneg")
+stackable = true
+metadata/_custom_type_script = "uid://losagdaaw6n6"
